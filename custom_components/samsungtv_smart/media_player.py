@@ -277,6 +277,9 @@ class SamsungTVDevice(MediaPlayerEntity):
         self._attr_is_volume_muted = False
         self._attr_volume_level = 0.0
 
+        # Art
+        self._attr_is_art_mode = False
+
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, self._attr_unique_id)},
             name=self._attr_name,
