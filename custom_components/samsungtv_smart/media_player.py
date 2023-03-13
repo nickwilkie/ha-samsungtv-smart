@@ -254,7 +254,7 @@ class SamsungTVDevice(MediaPlayerEntity):
         unique_id,
         entry_data,
         session: ClientSession,
-        update_token_func,
+        update_toaken_func,
         logo_file,
         local_logo_path,
     ):
@@ -1142,6 +1142,11 @@ class SamsungTVDevice(MediaPlayerEntity):
         if not self._channel_list:
             return None
         return list(self._channel_list)
+
+    @property
+    def is_art_mode(self):
+        """"Is art mode active"""
+        return self._ws.artmode_status
 
     @property
     def source(self):
